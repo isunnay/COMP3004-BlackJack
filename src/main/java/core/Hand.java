@@ -6,12 +6,15 @@ public class Hand {
 	private Card[] Hand;
 	private int handValue;
 	public boolean isBusted;
+	private int numberOfAces;
 
 	
 	public Hand() {
 		Hand = new Card[20];
+		handValue = 0;
 		count = 0;	
 		isBusted = false;
+		numberOfAces = 0;
 	}
 	
 	public void hit(Card card) {
@@ -23,8 +26,15 @@ public class Hand {
 	}	
 	
 	public int getHandValue() {
+		this.findAce();
+		
 		for(int i=0;i<count;i++) {
 			handValue += Hand[i].getValueOfCard();
+			
+			if(handValue>21 && numberOfAces!=0) {
+				handValue = handValue - 10;
+				numberOfAces = numberOfAces -1;	
+			}
 		}
 		return handValue;
 	}
@@ -49,6 +59,13 @@ public class Hand {
 		}
 		return false;
 	}
-
+	
+	public void findAce() {
+		for(int i=0;i<count;i++) {
+			if(Hand[i].getCardRank() == "A") {
+				numberOfAces++;
+			}
+		}
+	}
 
 }

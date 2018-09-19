@@ -77,5 +77,21 @@ public class HandTest extends TestCase {
 		}
 		assertTrue("true", dealerHand.isBusted);
 	}
+	
+	public void testDoesAceWork() {
+		Hand playerHand = new Hand();
+		Card card = new Card(0, 0);     //Ace
+		Card card3 = new Card(0, 0);   
+		Card card1 = new Card(0, 8);
+		Card card2 = new Card(0,11);
+		
+		playerHand.hit(card);       // 1 or 11
+		playerHand.hit(card3);      // 1 or 11
+		playerHand.hit(card1);      // 10 points
+		playerHand.hit(card2);		// 10 points
+
+		playerHand.checkIfBusted();
+		assertFalse("false", playerHand.isBusted);
+	}
 
 }

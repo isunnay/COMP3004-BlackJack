@@ -23,6 +23,7 @@ public class Card{
 	}
 	
 	
+	
 	public String getCardName() {
 		String suitForName = String.valueOf(suit);
 		String rankForName = String.valueOf(rank);
