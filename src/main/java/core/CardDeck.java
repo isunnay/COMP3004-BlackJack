@@ -6,6 +6,7 @@ import java.util.Collections;
 public class CardDeck {
 	
 	private ArrayList<Card> cardDeck;
+	private int size;
 
 
 	public CardDeck() {
@@ -25,7 +26,7 @@ public class CardDeck {
 	
 	
 	public int getDeckSize() {
-		int size = cardDeck.size();
+		size = cardDeck.size();
 		return size;
 	}
 	
@@ -68,6 +69,11 @@ public class CardDeck {
 		return true;
 	}
 	
+	public Card getNextCard() {
+		Card nextCard = cardDeck.get(getDeckSize()-1);
+		cardDeck.remove(getDeckSize()-1);
+		return nextCard;
+	}
 
 
 
