@@ -22,6 +22,14 @@ public class Card{
 		return ranks[this.rank];
 	}
 	
+	public int getCardSuitInt() {
+		return this.suit;
+	}
+	
+	public int getCardRankInt() {
+		return this.rank;
+	}
+	
 	
 	
 	public String getCardName() {

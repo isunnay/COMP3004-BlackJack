@@ -25,7 +25,12 @@ public class Hand {
 		return this.count;
 	}	
 	
+	public int getNumberOfAces() {
+		return numberOfAces;
+	}
+	
 	public int getHandValue() {
+		handValue=0;
 		this.findAce();
 		
 		for(int i=0;i<count;i++) {
@@ -40,7 +45,7 @@ public class Hand {
 	}
 
 	public boolean checkBlackjack() {
-		if(this.handValue == 21) {
+		if(this.handValue == 21 && this.getHandSize() == 2) {
 			return true;
 		}
 		return false;
@@ -65,6 +70,16 @@ public class Hand {
 			if(Hand[i].getCardRank() == "A") {
 				numberOfAces++;
 			}
+		}
+	}
+	
+	public String showTopCard() {
+		return (Hand[0].toString(Hand[0].getCardSuitInt(), Hand[0].getCardRankInt()));	
+	}
+	
+	public void showCards() {
+		for(int i=0;i<count;i++) {
+			System.out.println(Hand[i].toString(Hand[i].getCardSuitInt(), Hand[i].getCardRankInt()));	
 		}
 	}
 
