@@ -6,9 +6,9 @@ public class GameTest extends TestCase{
 	
 	public void testConsole() {
 		Game game = new Game();
-		game.startConsole();
-		assertTrue("true",game.isConsoleRunning());
-		
+		Console console = new Console();
+		int x = 21;int y = 2;
+		assertTrue("true",game.isConsoleRunning(console,x,y));	
 	}
 	
 	public void testFileInput() {
@@ -20,7 +20,7 @@ public class GameTest extends TestCase{
 	
 	public void testStartGame() {
 		Game game = new Game();
-		assertTrue("true",game.isGameRunning());
+		assertTrue("true",game.isGameRunning(game));
 		
 	}
 	

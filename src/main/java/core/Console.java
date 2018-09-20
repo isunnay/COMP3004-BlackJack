@@ -155,14 +155,20 @@ public class Console {
 		else
 			return false;
 	}
+	
+	public void start() {
+		this.showDealerTopCard();
+		this.showPlayerCards();
+		this.menuOptions();
+	}
 		
 
 
 
-public static void main(String args[]) {
+/*public static void main(String args[]) {
 	Console console = new Console();
 	console.showDealerTopCard();
 	console.showPlayerCards();
 	console.menuOptions();
-}
+}*/
 }
