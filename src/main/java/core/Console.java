@@ -36,6 +36,10 @@ public class Console {
 		playerHand.showCards();
 		System.out.println("Your current points are: " + playerHand.getHandValue());
 	}
+	
+	public int numberOfCards(Hand playerHand) {
+		return playerHand.getHandSize();
+	}
 
 	public void menuOptions() {
 		playerMenu();
@@ -110,8 +114,7 @@ public class Console {
 			System.exit(0);
 		}
 	}
-
-
+	
 	
 	public boolean isPlayerWinner(int player, int dealer) {
 		if(player>dealer) {

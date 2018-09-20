@@ -58,6 +58,17 @@ public class HandTest extends TestCase {
 		assertTrue("true", dealerHand.checkHit());
 	}
 	
+	public void testDealerHits2() {
+		CardDeck deck = new CardDeck();
+		Hand dealerHand = new Hand();
+		dealerHand.hit(deck.getNextCard());
+		dealerHand.hit(deck.getNextCard());
+		dealerHand.hit(deck.getNextCard());
+		dealerHand.hit(deck.getNextCard());
+		dealerHand.hit(deck.getNextCard());
+		assertTrue("true", dealerHand.checkHit());
+	}
+	
 	public void testPlayerIsBusted() {
 		CardDeck deck = new CardDeck();
 		Hand playerHand = new Hand();

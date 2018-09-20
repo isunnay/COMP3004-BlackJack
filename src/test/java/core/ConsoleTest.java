@@ -102,5 +102,16 @@ public class ConsoleTest extends TestCase{
 		dealerHand.hit(dealerCard3);
 		assertTrue("true", console.checkPlayerStand(playerHand, dealerHand));
 	}
+	
+	public void testShowPlayerCards() {
+		Console console = new Console();
+		Hand playerHand = new Hand();
+		Card playerCard1 = new Card(0,5);
+		Card playerCard2 = new Card(0,6);
+		playerHand.hit(playerCard1);
+		playerHand.hit(playerCard2);
+		assertEquals(2,console.numberOfCards(playerHand));
+	}
+	
 
 }

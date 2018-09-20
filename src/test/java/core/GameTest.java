@@ -11,12 +11,6 @@ public class GameTest extends TestCase{
 		assertTrue("true",game.isConsoleRunning(console,x,y));	
 	}
 	
-	public void testFileInput() {
-		Game game = new Game();
-		game.startFileInput();
-		assertTrue("True",game.isFileInputRunning());
-		
-	}
 	
 	public void testStartGame() {
 		Game game = new Game();
